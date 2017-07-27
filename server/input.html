@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../assets/js/jquery-1.10.2.js"></script>
+</head>
+<body>
+<div>
+    <input type="text" name="action" value="login"/>
+    <input type="text" name="name"/>
+    <input type="text" name="psd"/>
+    <input type="submit" value="获取" id="ok"/>
+</div>
+</body>
+<script>
+$("#ok").click(function(){
+    $.ajax({
+        url:"teacherinfo.php",
+        type: 'POST',
+        data: {
+            action: 'showall',
+            name:1,
+            psd:1,
+        },
+        success: function(result) {
+            var result = $.parseJSON(result);
+            if(result.result) {
+                alert(result.msg);
+            }
+            else {
+                alert(result.msg);
+            }
+        },
+        error: function(){
+        	alert('发送失败');
+        }
+    });
+});
+</script>
+</html>

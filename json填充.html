@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+function showIntention(jobIntention){
+var obj = eval(jobIntention);
+if(obj == null){
+layer.msg("暂无工作意向数据,请添加");
+}
+else
+{
+for (var i = 0; i < obj.length; i++) {
+if(!obj[i].salary=='')
+{
+label ="<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].salary+"</span><em class='vline'></em>";
+}
+if(!obj[i].MaterialCode=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].MaterialCode+"</span><em class='vline'></em>";
+}
+if(!obj[i].station=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].station+"</span><em class='vline'></em>";
+}
+if(!obj[i].place=='')
+{
+label =label+ "<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].place+"</span><em class='vline'></em>";
+}
+if(!obj[i].jobCategory=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].jobCategory+"</span><em class='vline'></em>";
+}
+if(!obj[i].property=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].property+"</span><em class='vline'></em>";
+}
+if(!obj[i].companySize=='')
+{
+label =label+ "<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].companySize+"</span><em class='vline'></em>";
+}
+if(!obj[i].Welfare=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].Welfare+"</span><em class='vline'></em>";
+}
+if(!obj[i].workingTime=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].workingTime+"</span><em class='vline'></em>";
+}
+if(!obj[i].partTimeJobs=='')
+{
+label = label+"<span class='label-text'><i class='fa fa-check-square-o'></i>"+obj[i].partTimeJobs+"</span><em class='vline'></em>";
+}
+var instr = "<div id='row-job'>"+label+"<div class='op'><a href='javascript:void(0);' id='' data='"+i+"' class='link-edit edit-intention'>"+
+    "<i class='fa fa-pencil-square-o'></i>编辑</a><em class='vline'></em>"+
+    "<a href='javascript:void(0);' id='' data="+i+"  class='link-delete del-intention'>"+
+        "<i class='fa fa-trash-o'></i>删除</a></div></div>";
+$("#info-labels").prepend(instr);
+}
+}
+}
+</body>
+</html>
